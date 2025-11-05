@@ -1,20 +1,21 @@
-"use client"
+"use client";
 
-import { Card } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { SectionHeader } from "@/components/section-header"
-import { Star } from "lucide-react"
-import { motion } from "framer-motion"
-import { LogoMarquee } from "@/components/logo-marquee"
+import { Card } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { SectionHeader } from "@/components/section-header";
+import { Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { LogoMarquee } from "@/components/logo-marquee";
 
 const clients = [
   { name: "Zapproach", logo: "/{AB7F8A45-B590-4AD9-8589-F0912649688E}.png" },
   { name: "Klanik", logo: "/klanik.png" },
   { name: "Deloitte", logo: "/deloitte1.png" },
   { name: "Nx2Square", logo: "/nx.png" },
+  { name: "noudeal", logo: "/logo-green.png" },
   { name: "ZekoMru", logo: "/zeko.png" },
   { name: "Uom Oracle Club", logo: "/upm.png" },
-]
+];
 
 export function Clients() {
   return (
@@ -32,5 +33,5 @@ export function Clients() {
         </div>
       </div>
     </section>
-  )
+  );
 }

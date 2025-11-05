@@ -137,7 +137,10 @@ export function Portfolio() {
     setShowViewer(true);
   };
   return (
-    <section id="portfolio" className="py-20 md:py-32 bg-muted/30 -mt-20">
+    <section
+      id="portfolio"
+      className="py-20 md:py-32 bg-muted/30 -mt-20 overflow-x-clip"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           kicker="Some of our Our Work"
@@ -168,22 +171,38 @@ export function Portfolio() {
           {filteredItems.map((item, index) => (
             <motion.div
               key={item.title}
+              className="min-w-0" // ← ensure child can shrink inside grid cell
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-border/50">
-                <div className="relative aspect-video overflow-hidden">
+              <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-border/50 w-full min-w-0">
+                <div className="relative aspect-video overflow-hidden min-w-0">
                   <Image
                     src={item.image || "/placeholder.svg"}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {/* Visit Site Button */}
+
+                  {/* Mobile external link icon */}
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${item.title}`}
+                    className="md:hidden absolute top-2 right-2 z-20 bg-black/70 text-white p-2 rounded-full backdrop-blur-sm touch-manipulation"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+
+                  {/* Make the gradient ignore taps/clicks */}
+                  <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* Keep desktop CTA above the gradient too */}
+                  <div className="absolute bottom-4 left-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Button
                       asChild
                       size="sm"
@@ -198,24 +217,14 @@ export function Portfolio() {
                         <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
-
-                    {/* View Implementation Button (only if images exist) */}
-                    {item.images && item.images.length > 1 && (
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="w-full gradient-sunset text-white border-white/40 hover:bg-white/20"
-                        onClick={() => openViewer(item.images!)}
-                      >
-                        View Implementation
-                      </Button>
-                    )}
                   </div>
                 </div>
 
-                <div className="p-6 space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="font-heading font-semibold text-lg group-hover:text-primary transition-colors">
+                <div className="p-6 space-y-4 min-w-0">
+                  {" "}
+                  {/* ← prevent inner text from forcing width */}
+                  <div className="space-y-2 min-w-0">
+                    <h3 className="font-heading font-semibold text-lg group-hover:text-primary transition-colors break-words">
                       {item.title}
                     </h3>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -225,10 +234,13 @@ export function Portfolio() {
                       </span>
                     </div>
                   </div>
-
                   <div className="flex flex-wrap gap-2">
                     {item.tech.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
+                      <Badge
+                        key={tech}
+                        variant="secondary"
+                        className="text-xs max-w-full break-words"
+                      >
                         {tech}
                       </Badge>
                     ))}
@@ -239,33 +251,38 @@ export function Portfolio() {
           ))}
         </div>
       </div>
+
+      {/* Viewer unchanged (you already constrained it with p-4 and max-w-4xl) */}
       {showViewer && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-[999] flex items-center justify-center">
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-[999] flex items-center justify-center p-4">
           <button
             className="absolute top-6 right-6 text-white text-3xl"
             onClick={() => setShowViewer(false)}
+            aria-label="Close viewer"
           >
             ✕
           </button>
 
-          <div className="flex items-center gap-6">
+          <div className="relative w-full max-w-4xl">
             <button
               onClick={() =>
                 setSlideIndex(
                   (slideIndex - 1 + activeImages.length) % activeImages.length
                 )
               }
-              className="text-white text-4xl px-4"
+              className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-4xl px-2"
+              aria-label="Previous"
             >
               ‹
             </button>
 
-            <div className="relative w-[80vw] max-w-4xl aspect-video">
+            <div className="relative mx-10 sm:mx-12 aspect-video">
               <Image
                 src={activeImages[slideIndex]}
                 alt="Implementation Preview"
                 fill
                 className="object-contain rounded-lg"
+                sizes="100vw"
               />
             </div>
 
@@ -273,7 +290,8 @@ export function Portfolio() {
               onClick={() =>
                 setSlideIndex((slideIndex + 1) % activeImages.length)
               }
-              className="text-white text-4xl px-4"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-4xl px-2"
+              aria-label="Next"
             >
               ›
             </button>

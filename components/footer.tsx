@@ -125,6 +125,9 @@ export function Footer() {
             © {new Date().getFullYear()} Mojhoa Automations. All rights
             reserved.
           </p>
+          <p className="text-sm text-muted-foreground">
+           BRN: C25227605
+          </p>
         </div>
       </div>
     </footer>

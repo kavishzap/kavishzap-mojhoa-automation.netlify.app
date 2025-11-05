@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Client {
-  name: string
-  logo: string
+  name: string;
+  logo: string;
 }
 
 interface LogoMarqueeProps {
-  clients: Client[]
+  clients: Client[];
 }
 
 export function LogoMarquee({ clients }: LogoMarqueeProps) {
@@ -17,10 +17,13 @@ export function LogoMarquee({ clients }: LogoMarqueeProps) {
     <div className="relative overflow-hidden py-6">
       {/* Animation container */}
       <motion.div
-        className="flex gap-12"
+        className="flex gap-12 cursor-grab active:cursor-grabbing"
+        drag="x"
+        dragConstraints={{ left: -300, right: 300 }}
         animate={{ x: ["0%", "-50%"] }}
-        transition={{ duration: 10, ease: "linear", repeat: Infinity }}
-        whileHover={{ scale: 1.02 }} // slight zoom on hover
+        transition={{ duration: 12, ease: "linear", repeat: Infinity }}
+        whileHover={{ scale: 1.02 }}
+        onDragStart={(e) => e.stopPropagation()}
       >
         {[...clients, ...clients].map((client, index) => (
           <motion.div
@@ -45,5 +48,5 @@ export function LogoMarquee({ clients }: LogoMarqueeProps) {
       <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none" />
     </div>
-  )
+  );
 }
