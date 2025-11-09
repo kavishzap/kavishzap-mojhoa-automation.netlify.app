@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://mojhoa.com" },
   icons: {
-    icon: [{ url: "/favicon.ico" }, { url: "/logofinal.png" }],
-    shortcut: [{ url: "/favicon.ico" }],
-    apple: [{ url: "/apple-touch-icon.png" }],
+    icon: [{ url: "/logo1.png" }, { url: "/logo1.png" }],
+    shortcut: [{ url: "/logo1.png" }],
+    apple: [{ url: "/logo1.png" }],
   },
   authors: [{ name: "Mojhoa Automations" }],
   openGraph: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Mojhoa Automations | Automate. Scale. Impress.",
     description:
       "We design high-impact automations and enterprise-grade web systems.",
-    images: [{ url: "/og.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/logo1.png", width: 1200, height: 630 }],
     locale: "en_MU",
   },
   twitter: {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Mojhoa Automations | Automate. Scale. Impress.",
     description:
       "We design high-impact automations and enterprise-grade web systems.",
-    images: ["/og.jpg"],
+    images: ["/logo1.png"],
   },
 };
 
