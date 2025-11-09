@@ -9,12 +9,12 @@ import { LogoMarquee } from "@/components/logo-marquee";
 
 const clients = [
   { name: "Zapproach", logo: "/{AB7F8A45-B590-4AD9-8589-F0912649688E}.png" },
-  { name: "Klanik", logo: "/klanik.png" },
-  { name: "Deloitte", logo: "/deloitte1.png" },
-  { name: "Nx2Square", logo: "/nx.png" },
   { name: "noudeal", logo: "/logo-green.png" },
   { name: "ZekoMru", logo: "/zeko.png" },
   { name: "Uom Oracle Club", logo: "/upm.png" },
+  { name: "Native Lodge", logo: "/native.png" },
+  { name: "L'ajoupa", logo: "/lajoupa1.png" },
+  { name: "Sailesh Claire Ltd", logo: "/sailesh.png" },
 ];
 
 export function Clients() {

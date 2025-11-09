@@ -32,9 +32,12 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://mojhoa.com" },
   icons: {
-    icon: [{ url: "/logo1.png" }, { url: "/logo1.png" }],
-    shortcut: [{ url: "/logo1.png" }],
-    apple: [{ url: "/logo1.png" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-19x96.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-19x96.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
   },
   authors: [{ name: "Mojhoa Automations" }],
   openGraph: {
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
     title: "Mojhoa Automations | Automate. Scale. Impress.",
     description:
       "We design high-impact automations and enterprise-grade web systems.",
-    images: [{ url: "/logo1.png", width: 1200, height: 630 }],
+    images: [{ url: "favicon-19x96", width: 1200, height: 630 }],
     locale: "en_MU",
   },
   twitter: {
@@ -52,7 +55,7 @@ export const metadata: Metadata = {
     title: "Mojhoa Automations | Automate. Scale. Impress.",
     description:
       "We design high-impact automations and enterprise-grade web systems.",
-    images: ["/logo1.png"],
+    images: ["favicon-19x96"],
   },
 };
 
@@ -64,7 +67,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${sora.variable} font-sans antialiased overflow-x-hidden`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
           <Navbar />
           {children}
           <Footer />
