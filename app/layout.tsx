@@ -1,21 +1,27 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter, Sora } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/components/ui/toaster"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter, Sora } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const sora = Sora({ subsets: ["latin"], variable: "--font-sora" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const sora = Sora({ subsets: ["latin"], variable: "--font-sora" });
 
 export const metadata: Metadata = {
-  title: "Mojhoa Automations",
+  metadataBase: new URL("https://mojhoa.com"),
+  title: {
+    default: "Mojhoa Automations | Enterprise Web & Automation in Mauritius",
+    template: "%s | Mojhoa Automations",
+  },
   description:
     "We design high-impact automations and enterprise-grade web systems for restaurants, events, ERP, and corporate websites.",
   keywords: [
+    "Mojhoa",
+    "Mojhoa Automations",
     "automation",
     "software solutions",
     "restaurant automation",
@@ -24,34 +30,40 @@ export const metadata: Metadata = {
     "corporate websites",
     "Mauritius",
   ],
+  alternates: { canonical: "https://mojhoa.com" },
   icons: {
-    icon: "/logofinal.png",      // Main favicon
-    shortcut: "/logofinal.png",  // Older browser support
-    apple: "/logofinal.png",     // Apple touch icon
+    icon: [{ url: "/favicon.ico" }, { url: "/logofinal.png" }],
+    shortcut: [{ url: "/favicon.ico" }],
+    apple: [{ url: "/apple-touch-icon.png" }],
   },
   authors: [{ name: "Mojhoa Automations" }],
   openGraph: {
-    title: "Mojhoa Automations | Automate. Scale. Impress.",
-    description: "We design high-impact automations and enterprise-grade web systems.",
     type: "website",
-    locale: "en_US",
+    url: "https://mojhoa.com",
+    siteName: "Mojhoa Automations",
+    title: "Mojhoa Automations | Automate. Scale. Impress.",
+    description:
+      "We design high-impact automations and enterprise-grade web systems.",
+    images: [{ url: "/og.jpg", width: 1200, height: 630 }],
+    locale: "en_MU",
   },
   twitter: {
     card: "summary_large_image",
     title: "Mojhoa Automations | Automate. Scale. Impress.",
-    description: "We design high-impact automations and enterprise-grade web systems.",
+    description:
+      "We design high-impact automations and enterprise-grade web systems.",
+    images: ["/og.jpg"],
   },
-    generator: 'v0.app'
-}
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${sora.variable} font-sans antialiased overflow-x-hidden`}>
+      <body
+        className={`${inter.variable} ${sora.variable} font-sans antialiased overflow-x-hidden`}
+      >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Navbar />
           {children}
@@ -61,5 +73,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

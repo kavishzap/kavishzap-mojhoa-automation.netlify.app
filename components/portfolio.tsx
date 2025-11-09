@@ -94,7 +94,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Car Rental Contract Automation System",
     category: "ERP",
     image: "/carrental.png",
-    url: "https://car-rental-sailesh.netlify.app/reports",
+    url: "https://car-rental-sailesh.netlify.app",
     result: "End-to-end rental operations digitized and automated",
     tech: [
       "Next.js & Tailwind UI",

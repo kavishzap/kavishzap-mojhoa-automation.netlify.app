@@ -55,11 +55,11 @@ export function Hero() {
               </motion.div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance">
-                Automate. Scale. <span className="gradient-text">Impress.</span>
+                 Mojhoa <span className="gradient-text">Automations.</span>
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty max-w-2xl">
-                We design high-impact automations and enterprise-grade web
+                We design high-impact Web, ERP, POS & Event Systems in Mauritius and enterprise-grade
                 systems that transform how businesses operate.
               </p>
             </div>
