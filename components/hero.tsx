@@ -9,6 +9,7 @@ import {
   Building2,
   Layers,
   Globe,
+  Car,
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -149,6 +150,7 @@ export function Hero() {
                       label: "Corporate Website and Personal Portfolio",
                     },
                     { icon: Layers, label: "Custom ERP Solutions" },
+                    { icon: Car, label: "Car rental Back office systems" },
                   ].map((item, i) => (
                     <div
                       key={i}

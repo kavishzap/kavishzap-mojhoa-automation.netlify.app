@@ -44,25 +44,38 @@ const portfolioItems: PortfolioItem[] = [
     tech: ["Custom Invoices", "Customer Management", "template selection"],
   },
   {
-    title: "Corporate Website for Zaccbox App",
-    category: "Corporate",
-    image: "/zaccbox.png",
-    url: "https://zaccbox.com/",
-    result: "Better Customer Reach",
-    tech: ["Clear Value Proposition", "Builds Trust & Credibility"],
+    title: "Car Rental Contract Automation System",
+    category: "ERP",
+    image: "/{D09C5DCA-5FA8-4E08-AE4F-B0B2FC85BB89}.png",
+    url: "https://car-rental-sailesh.netlify.app",
+    result: "End-to-end rental operations digitized and automated",
+    tech: [
+      "Digital contract generation with e-signatures",
+      "Automated pricing, invoicing & fleet management",
+    ],
   },
   {
-    title: "Noudeal Event Management Website",
-    category: "Events",
-    image: "/nourb.png",
-    url: "https://backofficenoudeal.netlify.app",
-    result:
-      "Streamlined event management, improved customer engagement, and enhanced booking experience",
+    title: "Car Rental Commercial Page",
+    category: "Corporate",
+    image: "/{49D1B6CA-8BE5-4217-934A-D9EC840DCB2A}.png",
+    url: "https://clairesailesh.com",
+    result: "Enhanced online presence and customer engagement",
     tech: [
-      "Next.js + Tailwind UI",
-      "Secure event back-office dashboard",
-      "Customer and booking management system",
-      "Modern UX for seamless event browsing & ticketing",
+      "Modern responsive design",
+      "Fleet showcase and booking interface",
+      "SEO-optimized commercial website",
+    ],
+  },
+  {
+    title: "Zeko Event Booking Platform",
+    category: "Events",
+    image: "/zeko.jpg",
+    url: "https://zekomru.com/",
+    result: "600+ bookings processed",
+    tech: [
+      "Seamless online ticket purchasing",
+      "QR-based entry & on-site scanning",
+      "Real-time sales dashboard for organizers",
     ],
   },
   {
@@ -79,6 +92,15 @@ const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
+    title: "CZaccbox App",
+    category: "Corporate",
+    image: "/zaccbox.png",
+    url: "https://zaccbox.com/",
+    result: "Better Customer Reach",
+    tech: ["Clear Value Proposition", "Builds Trust & Credibility"],
+  },
+
+  {
     title: "University of Mauritius Hackathon Website",
     category: "Corporate",
     image: "/code.png",
@@ -90,56 +112,19 @@ const portfolioItems: PortfolioItem[] = [
       "Clear event schedule and information access",
     ],
   },
-  {
-    title: "Car Rental Contract Automation System",
-    category: "ERP",
-    image: "/carrental.png",
-    url: "https://car-rental-sailesh.netlify.app",
-    result: "End-to-end rental operations digitized and automated",
-    tech: [
-      "Next.js & Tailwind UI",
-      "Digital contract generation with e-signatures",
-      "Automated pricing, invoicing & fleet management",
-      "Real-time reporting and customer tracking",
-    ],
-  },
-  {
-    title: "ZaccBox Business Management Suite",
-    category: "ERP",
-    image: "/zbc.png",
-    url: "zbc.png",
-    result: "End-to-end business operations streamlined for SMEs",
-    tech: [
-      "Next.js & Tailwind UI",
-      "Supabase authentication & data storage",
-      "Invoice & expense automation",
-      "Real-time dashboards & financial reporting",
-    ],
-  },
-  {
-    title: "Zeko Event Booking Platform",
-    category: "Events",
-    image: "/zeko.jpg",
-    url: "https://zekomru.com/",
-    result: "600+ bookings processed",
-    tech: [
-      "Seamless online ticket purchasing",
-      "QR-based entry & on-site scanning",
-      "Real-time sales dashboard for organizers",
-    ],
-  },
-  {
-    title: "Restaurant Website with Online Menu",
-    category: "Restaurants",
-    image: "/lajoupa.png",
-    url: "https://lajoupa.netlify.app/",
-    result: "Faster order processing & reduced wait times",
-    tech: [
-      "Digital menu with category-based filtering",
-      "Customer cart & order customization (extra cheese, spice level, etc.)",
-      "Order summary with name / table number before checkout",
-    ],
-  },
+
+  // {
+  //   title: "Restaurant Website with Online Menu",
+  //   category: "Restaurants",
+  //   image: "/lajoupa.png",
+  //   url: "https://lajoupa.netlify.app/",
+  //   result: "Faster order processing & reduced wait times",
+  //   tech: [
+  //     "Digital menu with category-based filtering",
+  //     "Customer cart & order customization (extra cheese, spice level, etc.)",
+  //     "Order summary with name / table number before checkout",
+  //   ],
+  // },
   {
     title: "Mantra Connexions Website",
     category: "Corporate",
@@ -152,20 +137,6 @@ const portfolioItems: PortfolioItem[] = [
       "Responsive service-profile site with dynamic content",
       "SEO-optimised pages and performance enhancements",
       "Contact form integration & lead capture analytics",
-    ],
-  },
-  {
-    title: "Native Lodge User Wallet",
-    category: "Restaurants",
-    image: "/image.png",
-    url: "https://native-lodge-user-wallet.netlify.app/dashboard",
-    result:
-      "Enhanced brand visibility and client engagement for the service business",
-    tech: [
-      "Next.js + Tailwind CSS",
-      "Wallet dashboard with balance & transaction history",
-      "Secure auth & real-time updates via API",
-      "QR payment system integration & analytics",
     ],
   },
 ];
@@ -199,7 +170,7 @@ export function Portfolio() {
       id="portfolio"
       className="py-20 md:py-32 bg-muted/30 -mt-20 overflow-x-clip"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
         <SectionHeader
           kicker="Some of our Our Work"
           title="Portfolio"
