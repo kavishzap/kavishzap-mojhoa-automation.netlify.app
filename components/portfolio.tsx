@@ -77,11 +77,19 @@ const portfolioItems: PortfolioItem[] = [
       "QR-based entry & on-site scanning",
       "Real-time sales dashboard for organizers",
     ],
+  },  
+  {
+    title: "Zaccbox Mobile App",
+    category: "Corporate",
+    image: "/zaccbox_landscape_poster.jpg",
+    url: "https://play.google.com/store/apps/details?id=com.zapproachteam.zaccboxfree&hl=en",
+    result: "Better Customer Reach",
+    tech: ["Clear Value Proposition", "Builds Trust & Credibility"],
   },
   {
     title: "Noudeal Ticketing Platform",
     category: "Events",
-    image: "/noudeal.png",
+    image: "/noudsodn.png",
     url: "https://ticketnoudeal.netlify.app/",
     result: "10,000+ tickets processed and streamlined event operations",
     tech: [
@@ -90,14 +98,6 @@ const portfolioItems: PortfolioItem[] = [
       "Integrated expenses, accounting, and payouts dashboard",
       "Automated financial reporting for event organizers",
     ],
-  },
-  {
-    title: "CZaccbox App",
-    category: "Corporate",
-    image: "/zaccbox.png",
-    url: "https://zaccbox.com/",
-    result: "Better Customer Reach",
-    tech: ["Clear Value Proposition", "Builds Trust & Credibility"],
   },
 
   {
