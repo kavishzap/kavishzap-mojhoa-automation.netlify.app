@@ -77,7 +77,7 @@ const portfolioItems: PortfolioItem[] = [
       "QR-based entry & on-site scanning",
       "Real-time sales dashboard for organizers",
     ],
-  },  
+  },
   {
     title: "Zaccbox Mobile App",
     category: "Corporate",
@@ -101,15 +101,15 @@ const portfolioItems: PortfolioItem[] = [
   },
 
   {
-    title: "University of Mauritius Hackathon Website",
+    title: "DS EVENTS AND SHOWS WEBSITE",
     category: "Corporate",
-    image: "/code.png",
-    url: "https://code4good2025.netlify.app/",
-    result: "350+ participants managed",
+    image: "/ds.png",
+    url: "https://dsevents.info/",
+    result: "Modern event website with streamlined user experience",
     tech: [
-      "Easy online registration process",
-      "Automated team & participant management",
-      "Clear event schedule and information access",
+      "Responsive design for desktop, tablet, and mobile",
+      "Dynamic event listings with detailed show information",
+      "Fast-loading pages with SEO-friendly structure",
     ],
   },
 
