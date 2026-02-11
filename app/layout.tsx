@@ -7,6 +7,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import { GoogleAnalytics } from "@/components/analytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora" });
@@ -72,6 +73,7 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem={false}
         >
+          <GoogleAnalytics />
           <Navbar />
           {children}
           <Footer />

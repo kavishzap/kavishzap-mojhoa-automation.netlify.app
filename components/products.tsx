@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Check, MessageSquare } from "lucide-react";
 import Link from "next/link";
+import { event } from "@/components/analytics";
 
 interface Product {
     title: string;
@@ -165,6 +166,13 @@ export function Products() {
                                             asChild
                                             className="w-full gradient-sunset text-white border-0 group/btn"
                                             size="lg"
+                                            onClick={() => {
+                                                event({
+                                                    action: "click",
+                                                    category: "Product",
+                                                    label: `Get Quote - ${product.title}`,
+                                                });
+                                            }}
                                         >
                                             <Link href="#contact">
                                                 <MessageSquare className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
