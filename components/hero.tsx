@@ -5,11 +5,9 @@ import {
   ArrowRight,
   Zap,
   Users,
-  Clock,
   Building2,
   Layers,
   Globe,
-  Car,
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -56,7 +54,7 @@ export function Hero() {
               </motion.div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-balance">
-                 Mojhoa <span className="gradient-text">Automations.</span>
+                Mojhoa <span className="gradient-text">Automations.</span>
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty max-w-2xl">
@@ -141,16 +139,10 @@ export function Hero() {
 
                 <div className="space-y-4">
                   {[
-                    {
-                      icon: Building2,
-                      label: "Restaurant, Event Management Systems",
-                    },
-                    {
-                      icon: Globe,
-                      label: "Corporate Website and Personal Portfolio",
-                    },
-                    { icon: Layers, label: "Custom ERP Solutions" },
-                    { icon: Car, label: "Car rental Back office systems" },
+                    { icon: Layers, label: "Custom ERP & Business Automation Systems" },
+                    { icon: Building2, label: "Restaurant, POS & Event Management Platforms" },
+                    { icon: Globe, label: "Corporate Websites & Personal Portfolio Development" },
+                    { icon: Users, label: "Management & Back Office Systems" },
                   ].map((item, i) => (
                     <div
                       key={i}

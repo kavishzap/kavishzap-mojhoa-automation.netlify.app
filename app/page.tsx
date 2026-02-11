@@ -1,6 +1,7 @@
 // app/page.tsx
 import Script from "next/script";
 import { Hero } from "@/components/hero";
+import { Products } from "@/components/products";
 import { Portfolio } from "@/components/portfolio";
 import { Services } from "@/components/services";
 import { Clients } from "@/components/clients";
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <main className="min-h-screen">
         <Hero />
+        <Products />
         <Portfolio />
         <Services />
         <Clients />

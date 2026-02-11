@@ -4,16 +4,17 @@ import Logo from "../assets/mojhoa_whiteMO.png";
 import Image from "next/image";
 const quickLinks = [
   { href: "#home", label: "Home" },
+  { href: "#products", label: "Products" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#services", label: "Services" },
   { href: "#clients", label: "Clients" },
 ];
 
 const services = [
-  { href: "#services", label: "Restaurant Automation" },
-  { href: "#services", label: "Event Management" },
-  { href: "#services", label: "ERP Systems" },
-  { href: "#services", label: "Corporate Websites" },
+  { href: "#services", label: "Custom ERP & Business Automation" },
+  { href: "#services", label: "Restaurant, POS & Event Platforms" },
+  { href: "#services", label: "Corporate Websites & Portfolios" },
+  { href: "#services", label: "Management & Back Office Systems" },
 ];
 
 export function Footer() {

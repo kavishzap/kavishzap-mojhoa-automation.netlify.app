@@ -2,59 +2,59 @@
 
 import { Card } from "@/components/ui/card"
 import { SectionHeader } from "@/components/section-header"
-import { UtensilsCrossed, Calendar, Database, Globe, Check } from "lucide-react"
+import { Layers, Building2, Globe, Users, Check } from "lucide-react"
 import { motion } from "framer-motion"
 
 const services = [
   {
-    icon: UtensilsCrossed,
-    title: "Restaurant Automation",
+    icon: Layers,
+    title: "Custom ERP & Business Automation Systems",
     description:
-      "Transform your restaurant operations with intelligent automation that increases efficiency and customer satisfaction.",
+      "Enterprise resource planning solutions that unify your business operations into one powerful, integrated system with intelligent automation.",
     features: [
-      "QR code digital menus",
-      "Kitchen display system",
-      "POS integration & sync",
-      "Real-time analytics dashboard",
-    ],
-    color: "from-orange-500 to-red-500",
-  },
-  {
-    icon: Calendar,
-    title: "Event Management System",
-    description:
-      "Comprehensive event solutions from ticketing to check-in, designed to handle events of any scale seamlessly.",
-    features: [
-      "Online ticketing & payments",
-      "QR code check-in system",
-      "Seating & capacity management",
-      "Attendee analytics & reports",
-    ],
-    color: "from-blue-500 to-purple-500",
-  },
-  {
-    icon: Database,
-    title: "ERP System",
-    description:
-      "Enterprise resource planning solutions that unify your business operations into one powerful, integrated system.",
-    features: [
-      "Inventory & supply chain",
+      "Inventory & supply chain management",
       "Finance & accounting modules",
       "Business workflow automation",
-      "Role-based system access",
+      "Role-based system access & permissions",
     ],
     color: "from-green-500 to-teal-500",
   },
   {
+    icon: Building2,
+    title: "Restaurant, POS & Event Management Platforms",
+    description:
+      "Comprehensive solutions for restaurants and events - from POS systems to ticketing platforms, designed to handle operations seamlessly.",
+    features: [
+      "Point of Sale (POS) systems",
+      "Restaurant automation & kitchen display",
+      "Event ticketing & QR check-in",
+      "Real-time analytics & reporting",
+    ],
+    color: "from-orange-500 to-red-500",
+  },
+  {
     icon: Globe,
-    title: "Corporate Website",
+    title: "Corporate Websites & Personal Portfolio Development",
     description:
       "Lightning-fast, SEO-optimized websites built with modern frameworks that tell your brand story and drive conversions.",
     features: [
       "Custom web development",
       "SEO optimization & analytics",
-      "Headless CMS integration",
+      "Portfolio & showcase websites",
       "Brand storytelling & design",
+    ],
+    color: "from-blue-500 to-purple-500",
+  },
+  {
+    icon: Users,
+    title: "Management & Back Office Systems",
+    description:
+      "Powerful back-office solutions designed to streamline operations, manage resources, and provide comprehensive control over your business processes.",
+    features: [
+      "Customer & member management",
+      "Booking & scheduling systems",
+      "Payment tracking & invoicing",
+      "Admin dashboards & reporting",
     ],
     color: "from-pink-500 to-rose-500",
   },

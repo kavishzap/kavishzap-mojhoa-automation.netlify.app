@@ -24,7 +24,7 @@ export function Clients() {
         <SectionHeader
           kicker="Trusted By"
           title="Our Clients"
-          description="15+ businesses that trust us to power their operations and digital presence."
+          description="15+ businesses that trust us to power their operations and digital presence. Supporting small businesses."
         />
 
         {/* Logo Marquee */}
