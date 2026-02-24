@@ -66,23 +66,6 @@ const products: Product[] = [
             "Multi-User Support for Staff"
         ],
     }
-    ,
-    {
-        title: "Smart Point of Sale (POS) System",
-        description: "A modern POS solution designed for restaurants, retail shops, and service businesses. Easily manage sales, products, customers, and daily reports with a fast, touch-friendly interface built for real-world operations.",
-        image: "/poster/pos.png",
-        price: "Rs 25,000 (lifetime) or Rs 1,500 / month",
-        features: [
-            "Touch-Friendly Sales Interface",
-            "Product & Category Management",
-            "Quick Billing & Cart System",
-            "Customer Management",
-            "Daily Sales Summary & Reports",
-            "Invoice Printing (Thermal Printer Ready)",
-            "Offline Mode with Auto Sync",
-            "Kitchen Display Screen (KDS) Support"
-        ],
-    }
 
 ];
 
@@ -99,8 +82,8 @@ export function Products() {
                     description="Discover our range of powerful solutions designed to transform your business operations and drive success."
                 />
 
-                {/* Products Grid - 2x2 */}
-                <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
+                {/* Products Grid - 3 columns */}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {products.map((product, index) => (
                         <motion.div
                             key={product.title}
