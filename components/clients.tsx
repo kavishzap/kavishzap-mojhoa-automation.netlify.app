@@ -1,35 +1,30 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SectionHeader } from "@/components/section-header";
-import { Star } from "lucide-react";
-import { motion } from "framer-motion";
 import { LogoMarquee } from "@/components/logo-marquee";
 
-const clients = [
-  { name: "Zapproach", logo: "/{AB7F8A45-B590-4AD9-8589-F0912649688E}.png" },
-  { name: "noudeal", logo: "/logo-green.png" },
-  { name: "ZekoMru", logo: "/zeko.png" },
-  { name: "Uom Oracle Club", logo: "/upm.png" },
-  { name: "Native Lodge", logo: "/native.png" },
-  { name: "L'ajoupa", logo: "/lajoupa1.png" },
-  { name: "Sailesh Claire Ltd", logo: "/sailesh.png" },
+const clientNames = [
+  "Claire & Sailesh",
+  "Zeko",
+  "Native Lodge",
+  "L'Ajoupa",
+  "Pot Au Feu",
+  "Kohinoor Decorations",
+  "DS Events",
 ];
 
 export function Clients() {
   return (
-    <section id="clients" className="py-20 md:py-32 bg-muted/30 -mt-20">
+    <section id="clients" className="py-20 md:py-32 bg-muted/30 -mt-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           kicker="Trusted By"
           title="Our Clients"
-          description="15+ businesses that trust us to power their operations and digital presence. Supporting small businesses."
+          description="Businesses that trust us to power their operations and digital presence."
         />
 
-        {/* Logo Marquee */}
-        <div className="mb-20">
-          <LogoMarquee clients={clients} />
+        <div className="relative rounded-2xl border border-border/60 bg-card/50 backdrop-blur-sm py-8 md:py-10 px-4 shadow-inner">
+          <LogoMarquee clientNames={clientNames} />
         </div>
       </div>
     </section>

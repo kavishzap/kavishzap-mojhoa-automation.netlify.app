@@ -5,16 +5,16 @@ import Image from "next/image";
 const quickLinks = [
   { href: "#home", label: "Home" },
   { href: "#products", label: "Products" },
+  { href: "#branding", label: "Branding" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#services", label: "Services" },
-  { href: "#clients", label: "Clients" },
 ];
 
 const services = [
   { href: "#services", label: "Custom ERP & Business Automation" },
   { href: "#services", label: "Restaurant, POS & Event Platforms" },
   { href: "#services", label: "Corporate Websites & Portfolios" },
-  { href: "#services", label: "Management & Back Office Systems" },
+  { href: "#services", label: "Branding" },
 ];
 
 export function Footer() {

@@ -146,6 +146,11 @@
   background-clip: text;
 }
 
+/* Tourney font for client names (loaded via next/font in layout) */
+.font-tourney {
+  font-family: var(--font-tourney), sans-serif;
+}
+
 /* Glassmorphism effect */
 .glass {
   background: rgba(255, 255, 255, 0.05);

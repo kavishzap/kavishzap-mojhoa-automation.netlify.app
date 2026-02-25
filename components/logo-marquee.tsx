@@ -1,52 +1,51 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
-interface Client {
-  name: string;
-  logo: string;
+export interface LogoMarqueeProps {
+  clientNames: string[];
 }
 
-interface LogoMarqueeProps {
-  clients: Client[];
-}
+export function LogoMarquee({ clientNames }: LogoMarqueeProps) {
+  const duplicated = [...clientNames, ...clientNames];
 
-export function LogoMarquee({ clients }: LogoMarqueeProps) {
   return (
-    <div className="relative overflow-hidden py-6">
-      {/* Animation container */}
+    <div className="relative overflow-hidden">
       <motion.div
-        className="flex gap-12 cursor-grab active:cursor-grabbing"
+        className="flex gap-6 sm:gap-8 md:gap-10 cursor-grab active:cursor-grabbing items-center"
         drag="x"
         dragConstraints={{ left: -300, right: 300 }}
         animate={{ x: ["0%", "-50%"] }}
-        transition={{ duration: 12, ease: "linear", repeat: Infinity }}
-        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 22, ease: "linear", repeat: Infinity }}
+        whileHover={{ scale: 1.005 }}
         onDragStart={(e) => e.stopPropagation()}
       >
-        {[...clients, ...clients].map((client, index) => (
+        {duplicated.map((name, index) => (
           <motion.div
-            key={index}
+            key={`${name}-${index}`}
             className="flex-shrink-0"
-            whileHover={{ scale: 1.08 }} // zoom each logo on hover
-            transition={{ type: "spring", stiffness: 200, damping: 12 }}
+            whileHover={{ scale: 1.06 }}
+            transition={{ type: "spring", stiffness: 260, damping: 14 }}
           >
-            <div className="relative w-28 h-14 sm:w-36 sm:h-16 md:w-44 md:h-20">
-              <Image
-                src={client.logo || "/placeholder.svg"}
-                alt={client.name}
-                fill
-                className="object-contain"
-              />
-            </div>
+            <span
+              className="
+                font-tourney text-base sm:text-lg md:text-xl font-semibold tracking-tight
+                px-5 py-2.5 sm:px-6 sm:py-3
+                rounded-full
+                border border-border/80 bg-background/80 dark:bg-card/80
+                text-muted-foreground
+                hover:text-foreground hover:border-primary/40 hover:shadow-md
+                transition-all duration-300 whitespace-nowrap
+              "
+            >
+              {name}
+            </span>
           </motion.div>
         ))}
       </motion.div>
 
-      {/* Soft gradient edges */}
-      <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-24 md:w-32 bg-gradient-to-r from-card/80 via-card/50 to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 md:w-32 bg-gradient-to-l from-card/80 via-card/50 to-transparent pointer-events-none" />
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { SectionHeader } from "@/components/section-header"
-import { Layers, Building2, Globe, Users, Check } from "lucide-react"
+import { Layers, Building2, Globe, Palette, Check } from "lucide-react"
 import { motion } from "framer-motion"
 
 const services = [
@@ -46,15 +46,15 @@ const services = [
     color: "from-blue-500 to-purple-500",
   },
   {
-    icon: Users,
-    title: "Management & Back Office Systems",
+    icon: Palette,
+    title: "Branding",
     description:
-      "Powerful back-office solutions designed to streamline operations, manage resources, and provide comprehensive control over your business processes.",
+      "Visual identity and brand design that makes your business stand out. From logos to full brand systems for restaurants, events, and corporate clients.",
     features: [
-      "Customer & member management",
-      "Booking & scheduling systems",
-      "Payment tracking & invoicing",
-      "Admin dashboards & reporting",
+      "Logo design & visual identity",
+      "Brand guidelines & style guides",
+      "Menu design, signage & marketing assets",
+      "Consistent look across web and print",
     ],
     color: "from-pink-500 to-rose-500",
   },

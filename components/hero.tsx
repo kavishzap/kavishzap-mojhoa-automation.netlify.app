@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   Zap,
-  Users,
+  Palette,
   Building2,
   Layers,
   Globe,
@@ -142,7 +142,7 @@ export function Hero() {
                     { icon: Layers, label: "Custom ERP & Business Automation Systems" },
                     { icon: Building2, label: "Restaurant, POS & Event Management Platforms" },
                     { icon: Globe, label: "Corporate Websites & Personal Portfolio Development" },
-                    { icon: Users, label: "Management & Back Office Systems" },
+                    { icon: Palette, label: "Branding" },
                   ].map((item, i) => (
                     <div
                       key={i}

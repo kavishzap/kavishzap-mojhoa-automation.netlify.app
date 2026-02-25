@@ -80,26 +80,25 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     title: "Zaccbox Mobile App",
-    category: "Corporate",
+    category: "ERP",
     image: "/zaccbox_landscape_poster.jpg",
     url: "https://play.google.com/store/apps/details?id=com.zapproachteam.zaccboxfree&hl=en",
     result: "Better Customer Reach",
     tech: ["Clear Value Proposition", "Builds Trust & Credibility"],
   },
   {
-    title: "Noudeal Ticketing Platform",
-    category: "Events",
-    image: "/noudsodn.png",
-    url: "https://ticketnoudeal.netlify.app/",
-    result: "10,000+ tickets processed and streamlined event operations",
+    title: "L'Ajoupa Restaurant Website",
+    category: "Restaurants",
+    image: "/drinks.png",
+    url: "https://lajoupa.com",
+    result: "Faster order processing and stronger online presence",
     tech: [
-      "Next.js & Tailwind UI",
-      "Real-time ticket sales & attendee analytics",
-      "Integrated expenses, accounting, and payouts dashboard",
-      "Automated financial reporting for event organizers",
+      "Digital menu with category-based browsing",
+      "Responsive design for desktop and mobile",
+      "Online ordering and table reservation",
+      "Brand-aligned visual identity and imagery",
     ],
   },
-
   {
     title: "DS EVENTS AND SHOWS WEBSITE",
     category: "Corporate",
@@ -125,20 +124,6 @@ const portfolioItems: PortfolioItem[] = [
   //     "Order summary with name / table number before checkout",
   //   ],
   // },
-  {
-    title: "Mantra Connexions Website",
-    category: "Corporate",
-    image: "/mantra.png",
-    url: "https://mantraconnexions.netlify.app/",
-    result:
-      "Enhanced brand visibility and client engagement for the service business",
-    tech: [
-      "Next.js & Tailwind UI",
-      "Responsive service-profile site with dynamic content",
-      "SEO-optimised pages and performance enhancements",
-      "Contact form integration & lead capture analytics",
-    ],
-  },
 ];
 
 const categories: Category[] = [

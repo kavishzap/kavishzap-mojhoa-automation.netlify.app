@@ -1,6 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Sora, Tourney } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
@@ -8,9 +8,14 @@ import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { GoogleAnalytics } from "@/components/analytics";
+import { CookieConsentProvider } from "@/components/cookie-consent";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora" });
+const tourney = Tourney({
+  subsets: ["latin"],
+  variable: "--font-tourney",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mojhoa.com"),
@@ -66,19 +71,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${sora.variable} font-sans antialiased overflow-x-hidden`}
+        className={`${inter.variable} ${sora.variable} ${tourney.variable} font-sans antialiased overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem={false}
         >
-          <GoogleAnalytics />
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster />
-          <Analytics />
+          <CookieConsentProvider>
+            <GoogleAnalytics />
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster />
+            <Analytics />
+          </CookieConsentProvider>
         </ThemeProvider>
       </body>
     </html>
