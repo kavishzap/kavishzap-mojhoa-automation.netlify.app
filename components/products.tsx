@@ -28,6 +28,21 @@ interface Product {
 
 const products: Product[] = [
   {
+    title: "Point of Sale (POS) Management System",
+    description:
+      "A complete POS solution for restaurants and retail. Handle orders, tables, kitchen display, thermal printing, and real-time inventory from one integrated system.",
+    image: "/poster/pos.png",
+    price: "Custom pricing — Get a Quote",
+    features: [
+      "Inventory & Product Management",
+      "Table management & order flow",
+      "Kitchen Display (KOT) & thermal printing",
+      "Integrated mobile app connected to printers",
+      "Sales dashboard & reporting",
+      "Multi-user support for staff",
+    ],
+  },
+  {
     title: "Car Rental Management System",
     description:
       "A complete digital solution to manage your car rental business efficiently. From vehicle tracking to contract management and revenue monitoring, everything is centralized in one powerful and easy-to-use platform.",
