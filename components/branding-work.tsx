@@ -105,6 +105,71 @@ export function BrandingWork() {
               />
             </motion.div>
           </div>
+
+          {/* Claire & Sailesh Car rental */}
+          <div className="space-y-6 pt-8 border-t border-border/50">
+            <div>
+              <h3 className="font-heading font-semibold text-xl md:text-2xl mb-3 text-foreground">
+                Branding of Claire &amp; Sailesh Car rental:
+              </h3>
+              <Link
+                href="https://clairesailesh.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+              >
+                clairesailesh.com
+                <ExternalLink className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* First image: full height on the left; on mobile show full image */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0 }}
+                className="relative overflow-hidden rounded-xl border border-border/50 bg-muted/30 w-full"
+              >
+                <div className="relative w-full md:hidden">
+                  <Image
+                    src="/sailesh/1.png"
+                    alt="Claire & Sailesh branding 1"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto"
+                    sizes="100vw"
+                  />
+                </div>
+                <div className="hidden md:block relative aspect-[4/3] w-full">
+                  <Image
+                    src="/sailesh/1.png"
+                    alt="Claire & Sailesh branding 1"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    sizes="50vw"
+                  />
+                </div>
+              </motion.div>
+              {/* Second image: right */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08 }}
+                className="relative overflow-hidden rounded-xl border border-border/50 bg-muted/30 min-h-[200px] aspect-[4/3] w-full"
+              >
+                <Image
+                  src="/sailesh/2.png"
+                  alt="Claire & Sailesh branding 2"
+                  fill
+                  className="object-contain md:object-cover hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

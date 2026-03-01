@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { SectionHeader } from "@/components/section-header"
-import { Layers, Building2, Globe, Palette, Check } from "lucide-react"
+import { Layers, Globe, Palette, Check } from "lucide-react"
 import { motion } from "framer-motion"
 
 const services = [
@@ -18,19 +18,6 @@ const services = [
       "Role-based system access & permissions",
     ],
     color: "from-green-500 to-teal-500",
-  },
-  {
-    icon: Building2,
-    title: "Restaurant, POS & Event Management Platforms",
-    description:
-      "Comprehensive solutions for restaurants and events - from POS systems to ticketing platforms, designed to handle operations seamlessly.",
-    features: [
-      "Point of Sale (POS) systems",
-      "Restaurant automation & kitchen display",
-      "Event ticketing & QR check-in",
-      "Real-time analytics & reporting",
-    ],
-    color: "from-orange-500 to-red-500",
   },
   {
     icon: Globe,
@@ -71,7 +58,7 @@ export function Services() {
         />
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 gap-6 md:gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}

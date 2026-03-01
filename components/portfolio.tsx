@@ -23,41 +23,9 @@ interface PortfolioItem {
 
 const portfolioItems: PortfolioItem[] = [
   {
-    title: "Point of Sale Management System",
-    category: "Restaurants",
-    image: "/pos.png",
-    url: "https://posmanagementsystem.netlify.app/",
-    images: ["/pos1.png", "/pos2.jpg", "/pos3.jpg"],
-    result: "+50% table turnover",
-    tech: [
-      "Inventory Management",
-      "Product Management ",
-      "Integrated mobile app connected to Thermal printer",
-    ],
-  },
-  {
-    title: "Invoicing App for Companies",
-    category: "ERP",
-    image: "/invoice1.png",
-    url: "https://invoicepilotapp.netlify.app/",
-    result: "60% faster workflows",
-    tech: ["Custom Invoices", "Customer Management", "template selection"],
-  },
-  {
-    title: "Car Rental Contract Automation System",
-    category: "ERP",
-    image: "/{D09C5DCA-5FA8-4E08-AE4F-B0B2FC85BB89}.png",
-    url: "https://clairesaileshbackoffice.netlify.app/",
-    result: "End-to-end rental operations digitized and automated",
-    tech: [
-      "Digital contract generation with e-signatures",
-      "Automated pricing, invoicing & fleet management",
-    ],
-  },
-  {
     title: "Car Rental Commercial Page",
     category: "Corporate",
-    image: "/{49D1B6CA-8BE5-4217-934A-D9EC840DCB2A}.png",
+    image: "/sailesh/3.png",
     url: "https://clairesailesh.com",
     result: "Enhanced online presence and customer engagement",
     tech: [
@@ -69,7 +37,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Zeko Event Booking Platform",
     category: "Events",
-    image: "/zeko.jpg",
+    image: "/zeko1.png",
     url: "https://zekomru.com/",
     result: "600+ bookings processed",
     tech: [
@@ -79,17 +47,9 @@ const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
-    title: "Zaccbox Mobile App",
-    category: "ERP",
-    image: "/zaccbox_landscape_poster.jpg",
-    url: "https://play.google.com/store/apps/details?id=com.zapproachteam.zaccboxfree&hl=en",
-    result: "Better Customer Reach",
-    tech: ["Clear Value Proposition", "Builds Trust & Credibility"],
-  },
-  {
     title: "L'Ajoupa Restaurant Website",
     category: "Restaurants",
-    image: "/drinks.png",
+    image: "/lajoupa/1.png",
     url: "https://lajoupa.com",
     result: "Faster order processing and stronger online presence",
     tech: [
@@ -126,21 +86,7 @@ const portfolioItems: PortfolioItem[] = [
   // },
 ];
 
-const categories: Category[] = [
-  "All",
-  "Restaurants",
-  "Events",
-  "ERP",
-  "Corporate",
-];
-
 export function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState<Category>("All");
-
-  const filteredItems =
-    activeCategory === "All"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category === activeCategory);
   const [showViewer, setShowViewer] = useState(false);
   const [activeImages, setActiveImages] = useState<string[]>([]);
   const [slideIndex, setSlideIndex] = useState(0);
@@ -162,36 +108,18 @@ export function Portfolio() {
           description="Explore our some of our successful projects across industries. Each solution is custom-built to drive measurable results."
         />
 
-        {/* Filter Chips */}
-        <div className="flex flex-wrap gap-3 justify-center mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeCategory === category ? "default" : "outline"}
-              onClick={() => setActiveCategory(category)}
-              className={
-                activeCategory === category
-                  ? "gradient-sunset text-white border-0"
-                  : ""
-              }
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
-
         {/* Portfolio Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {filteredItems.map((item, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
+          {portfolioItems.map((item, index) => (
             <motion.div
               key={item.title}
-              className="min-w-0" // ← ensure child can shrink inside grid cell
+              className="min-w-0 h-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-border/50 w-full min-w-0">
+              <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-border/50 w-full min-w-0 h-full flex flex-col min-h-[380px]">
                 <div className="relative aspect-video overflow-hidden min-w-0">
                   <Image
                     src={item.image || "/placeholder.svg"}
@@ -234,9 +162,7 @@ export function Portfolio() {
                   </div>
                 </div>
 
-                <div className="p-6 space-y-4 min-w-0">
-                  {" "}
-                  {/* ← prevent inner text from forcing width */}
+                <div className="p-6 space-y-4 min-w-0 flex-1 flex flex-col">
                   <div className="space-y-2 min-w-0">
                     <h3 className="font-heading font-semibold text-lg group-hover:text-primary transition-colors break-words">
                       {item.title}
