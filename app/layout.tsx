@@ -12,6 +12,7 @@ import { GoogleAnalytics } from "@/components/analytics";
 import { CookieConsentProvider } from "@/components/cookie-consent";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { SiteBackground } from "@/components/site-background";
+import { GlobalJsonLd } from "@/components/seo/jsonld";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora" });
@@ -83,6 +84,7 @@ export default function RootLayout({
         >
           <CookieConsentProvider>
             <GoogleAnalytics />
+            <GlobalJsonLd />
             <SiteBackground />
             <Navbar />
             <SmoothScroll>{children}</SmoothScroll>

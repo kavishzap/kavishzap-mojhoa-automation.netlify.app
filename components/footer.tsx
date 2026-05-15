@@ -3,18 +3,18 @@ import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import Logo from "../assets/mojhoa_whiteMO.png";
 import Image from "next/image";
 const quickLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
-  { href: "#ai", label: "AI Automation" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const services = [
-  { href: "#services", label: "Custom ERP & Business Automation" },
-  { href: "#services", label: "Booking Systems & Platforms" },
-  { href: "#services", label: "POS Systems & Operations" },
-  { href: "#services", label: "Branding & Digital Presence" },
+  { href: "/solutions", label: "Custom ERP & Business Automation" },
+  { href: "/solutions", label: "Booking Systems & Platforms" },
+  { href: "/solutions", label: "POS Systems & Operations" },
+  { href: "/solutions", label: "Branding & Digital Presence" },
 ];
 
 export function Footer() {

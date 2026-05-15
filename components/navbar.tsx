@@ -7,40 +7,20 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#services", label: "Services" },
-  { href: "#industries", label: "Industries" },
-  { href: "#projects", label: "Projects" },
-  { href: "#ai", label: "AI" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-
-      // ScrollSpy logic
-      const sections = navLinks.map((link) => link.href.slice(1));
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -59,7 +39,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="#home" className="flex items-center gap-2 group min-w-0">
+          <Link href="/" className="flex items-center gap-2 group min-w-0">
             <span className="font-heading font-semibold truncate text-base sm:text-lg max-w-[60vw] sm:max-w-none text-white">
               MOJHOA <span className="gradient-text">AUTOMATIONS</span>
             </span>
@@ -73,9 +53,7 @@ export function Navbar() {
                 href={link.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-white",
-                  activeSection === link.href.slice(1)
-                    ? "text-amber-200"
-                    : "text-white/60"
+                  "text-white/60"
                 )}
               >
                 {link.label}
@@ -89,7 +67,7 @@ export function Navbar() {
               asChild
               className="hidden sm:flex rounded-xl border-0 bg-[linear-gradient(135deg,#ffb703_0%,#fb5607_55%,#ff006e_120%)] text-black shadow-[0_18px_70px_rgba(251,86,7,0.22)]"
             >
-              <Link href="#contact">Book Consultation</Link>
+              <Link href="/contact">Book Consultation</Link>
             </Button>
 
             {/* Mobile Menu Button */}
@@ -119,9 +97,7 @@ export function Navbar() {
                 href={link.href}
                 className={cn(
                   "block px-3 py-2 rounded-xl text-base font-medium transition-colors",
-                  activeSection === link.href.slice(1)
-                    ? "bg-white/[0.06] text-amber-200"
-                    : "text-white/70 hover:bg-white/[0.04]"
+                  "text-white/70 hover:bg-white/[0.04]"
                 )}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -132,7 +108,7 @@ export function Navbar() {
               asChild
               className="w-full rounded-xl border-0 bg-[linear-gradient(135deg,#ffb703_0%,#fb5607_55%,#ff006e_120%)] text-black"
             >
-              <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 Book Consultation
               </Link>
             </Button>

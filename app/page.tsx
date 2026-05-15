@@ -16,6 +16,7 @@ export default function Home() {
             name: "Mojhoa Automations Ltd",
             url: "https://mojhoa.com",
             logo: "https://mojhoa.com/og.jpg",
+            email: "mojhoaautomations@gmail.com",
             sameAs: [
               "https://www.linkedin.com/in/kavish-mojhoa-b8a05023b"
             ],
@@ -40,6 +41,7 @@ export default function Home() {
             image: "https://mojhoa.com/og.jpg",
             url: "https://mojhoa.com",
             telephone: "+23059182520",
+            email: "mojhoaautomations@gmail.com",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Beau Vallon",
