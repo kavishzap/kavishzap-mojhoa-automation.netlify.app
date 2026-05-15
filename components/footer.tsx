@@ -1,25 +1,25 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import Logo from "../assets/mojhoa_whiteMO.png";
 import Image from "next/image";
 const quickLinks = [
   { href: "#home", label: "Home" },
-  { href: "#products", label: "Products" },
-  { href: "#branding", label: "Branding" },
-  { href: "#portfolio", label: "Portfolio" },
   { href: "#services", label: "Services" },
+  { href: "#projects", label: "Projects" },
+  { href: "#ai", label: "AI Automation" },
+  { href: "#contact", label: "Contact" },
 ];
 
 const services = [
   { href: "#services", label: "Custom ERP & Business Automation" },
-  { href: "#services", label: "Restaurant, POS & Event Platforms" },
-  { href: "#services", label: "Corporate Websites & Portfolios" },
-  { href: "#services", label: "Branding" },
+  { href: "#services", label: "Booking Systems & Platforms" },
+  { href: "#services", label: "POS Systems & Operations" },
+  { href: "#services", label: "Branding & Digital Presence" },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="border-t border-white/10 bg-black/60 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 text-center sm:text-left">
           {/* Brand */}
@@ -31,8 +31,7 @@ export function Footer() {
               priority
             />
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              We design high-impact automations and enterprise-grade web systems
-              that help businesses scale.
+              Premium AI automation and enterprise-grade software systems that help modern businesses scale.
             </p>
           </div>
 
@@ -83,10 +82,10 @@ export function Footer() {
               <li className="flex justify-center sm:justify-start items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 flex-shrink-0" />
                 <a
-                  href="mailto:kavish17mojhoa@gmail.com"
+                  href="mailto:mojhoaautomations@gmail.com"
                   className="hover:text-primary transition-colors"
                 >
-                  kavish17mojhoa@gmail.com
+                  mojhoaautomations@gmail.com
                 </a>
               </li>
 
@@ -96,7 +95,7 @@ export function Footer() {
                   href="tel:+23059182520"
                   className="hover:text-primary transition-colors"
                 >
-                  +230 5918 2520
+                  59182520
                 </a>
               </li>
 
@@ -112,7 +111,7 @@ export function Footer() {
                 href="https://www.linkedin.com/in/kavish-mojhoa-b8a05023b"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-white transition-colors flex items-center justify-center"
+                className="w-9 h-9 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors flex items-center justify-center text-white/80"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -121,7 +120,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border space-y-1 text-center">
+        <div className="mt-12 pt-8 border-t border-white/10 space-y-1 text-center">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Mojhoa Automations. All rights
             reserved.

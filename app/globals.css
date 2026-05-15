@@ -41,18 +41,18 @@
 }
 
 .dark {
-  --background: oklch(0.08 0 0);
+  --background: oklch(0.11 0 0);
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.12 0 0);
+  --card: oklch(0.14 0 0);
   --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.12 0 0);
+  --popover: oklch(0.14 0 0);
   --popover-foreground: oklch(0.98 0 0);
   --primary: oklch(0.68 0.18 45);
   --primary-foreground: oklch(0.08 0 0);
   --secondary: oklch(0.18 0 0);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.18 0 0);
-  --muted-foreground: oklch(0.6 0 0);
+  --muted-foreground: oklch(0.72 0 0);
   --accent: oklch(0.65 0.22 30);
   --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.5 0.22 27);
@@ -168,7 +168,60 @@
 
 /* Smooth scroll */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+
+/* Cinematic utility motion */
+@keyframes floaty {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes glowpulse {
+  0% {
+    opacity: 0.45;
+    filter: blur(18px);
+  }
+  50% {
+    opacity: 0.75;
+    filter: blur(24px);
+  }
+  100% {
+    opacity: 0.45;
+    filter: blur(18px);
+  }
+}
+
+.animate-floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.animate-glowpulse {
+  animation: glowpulse 5.5s ease-in-out infinite;
+}
+
+::selection {
+  background: rgba(251, 86, 7, 0.35);
+}
+
+/* Slight ambient lift so the site doesn't feel crushed */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -20;
+  background:
+    radial-gradient(900px 520px at 18% 8%, rgba(255, 183, 3, 0.10), transparent 62%),
+    radial-gradient(900px 520px at 82% 14%, rgba(251, 86, 7, 0.08), transparent 60%),
+    radial-gradient(900px 520px at 70% 80%, rgba(255, 0, 110, 0.05), transparent 65%);
 }
 
 /* Added marquee animation for logo carousel */

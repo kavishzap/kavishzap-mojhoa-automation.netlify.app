@@ -38,7 +38,7 @@ export function Contact() {
           {/* LEFT CARD — Contact Info */}
           <Card className="p-6 md:p-8 border-border/50 space-y-6 text-center">
             <p className="text-muted-foreground max-w-md mx-auto">
-              Reach out for partnerships, projects, or questions — we respond quickly.
+              Reach out for partnerships, projects, or questions. We respond quickly.
             </p>
 
             <div className="space-y-3">

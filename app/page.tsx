@@ -1,25 +1,11 @@
 // app/page.tsx
 import Script from "next/script";
-import { Hero } from "@/components/hero";
-import { Products } from "@/components/products";
-import { BrandingWork } from "@/components/branding-work";
-import { Portfolio } from "@/components/portfolio";
-import { Services } from "@/components/services";
-import { Clients } from "@/components/clients";
-import { Contact } from "@/components/contact";
+import { LandingPage } from "@/components/landing/landing-page";
 
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen">
-        <Hero />
-        <Products />
-        <BrandingWork />
-        <Portfolio />
-        <Services />
-        <Clients />
-        <Contact />
-      </main>
+      <LandingPage />
 
       {/* Organization */}
       <Script id="ld-org" type="application/ld+json"
@@ -35,7 +21,7 @@ export default function Home() {
             ],
             contactPoint: [{
               "@type": "ContactPoint",
-              telephone: "+230-5918-2520",
+              telephone: "+23059182520",
               contactType: "customer service",
               areaServed: "MU",
               availableLanguage: ["English", "French"]
@@ -53,7 +39,7 @@ export default function Home() {
             name: "Mojhoa Automations",
             image: "https://mojhoa.com/og.jpg",
             url: "https://mojhoa.com",
-            telephone: "+230-5918-2520",
+            telephone: "+23059182520",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Beau Vallon",

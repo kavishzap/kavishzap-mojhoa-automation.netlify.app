@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter, Sora, Tourney } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+// @ts-ignore: side-effect CSS import handled by Next.js
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -9,6 +10,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { GoogleAnalytics } from "@/components/analytics";
 import { CookieConsentProvider } from "@/components/cookie-consent";
+import { SmoothScroll } from "@/components/smooth-scroll";
+import { SiteBackground } from "@/components/site-background";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora" });
@@ -71,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${sora.variable} ${tourney.variable} font-sans antialiased overflow-x-hidden`}
+        className={`${inter.variable} ${sora.variable} ${tourney.variable} font-sans antialiased overflow-x-hidden text-white bg-[#07070a]`}
       >
         <ThemeProvider
           attribute="class"
@@ -80,8 +83,9 @@ export default function RootLayout({
         >
           <CookieConsentProvider>
             <GoogleAnalytics />
+            <SiteBackground />
             <Navbar />
-            {children}
+            <SmoothScroll>{children}</SmoothScroll>
             <Footer />
             <Toaster />
             <Analytics />

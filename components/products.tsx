@@ -32,7 +32,7 @@ const products: Product[] = [
     description:
       "A complete POS solution for restaurants and retail. Handle orders, tables, kitchen display, thermal printing, and real-time inventory from one integrated system.",
     image: "/poster/pos.png",
-    price: "Custom pricing — Get a Quote",
+    price: "Custom pricing. Get a quote.",
     features: [
       "Inventory & Product Management",
       "Table management & order flow",
@@ -79,7 +79,7 @@ const products: Product[] = [
   {
     title: "All-In-One Gym Management System",
     description:
-      "A complete gym management platform designed to handle members, workouts, diet plans, payments, and bookings — all from one powerful dashboard. Built to help gym owners save time, increase revenue, and deliver a better member experience.",
+      "A complete gym management platform designed to handle members, workouts, diet plans, payments, and bookings from one powerful dashboard. Built to help gym owners save time, increase revenue, and deliver a better member experience.",
     image: "/poster/gym.png",
     price: "Rs 60,000 (lifetime license)",
     features: [

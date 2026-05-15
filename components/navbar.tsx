@@ -3,16 +3,15 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#products", label: "Products" },
-  { href: "#branding", label: "Branding" },
-  { href: "#portfolio", label: "Portfolio" },
   { href: "#services", label: "Services" },
+  { href: "#industries", label: "Industries" },
+  { href: "#projects", label: "Projects" },
+  { href: "#ai", label: "AI" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -53,7 +52,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
+          ? "bg-black/55 backdrop-blur-xl border-b border-white/10 shadow-[0_18px_60px_rgba(0,0,0,0.55)]"
           : "bg-transparent"
       )}
     >
@@ -61,8 +60,8 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="#home" className="flex items-center gap-2 group min-w-0">
-            <span className="font-heading font-bold truncate text-base sm:text-lg max-w-[60vw] sm:max-w-none">
-              Mojhoa <span className="gradient-text">Automations</span> ltd
+            <span className="font-heading font-semibold truncate text-base sm:text-lg max-w-[60vw] sm:max-w-none text-white">
+              MOJHOA <span className="gradient-text">AUTOMATIONS</span>
             </span>
           </Link>
 
@@ -73,10 +72,10 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
+                  "text-sm font-medium transition-colors hover:text-white",
                   activeSection === link.href.slice(1)
-                    ? "text-primary"
-                    : "text-muted-foreground"
+                    ? "text-amber-200"
+                    : "text-white/60"
                 )}
               >
                 {link.label}
@@ -88,16 +87,16 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <Button
               asChild
-              className="hidden sm:flex gradient-sunset text-white border-0"
+              className="hidden sm:flex rounded-xl border-0 bg-[linear-gradient(135deg,#ffb703_0%,#fb5607_55%,#ff006e_120%)] text-black shadow-[0_18px_70px_rgba(251,86,7,0.22)]"
             >
-              <Link href="#contact">Get a Quote</Link>
+              <Link href="#contact">Book Consultation</Link>
             </Button>
 
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="md:hidden text-white hover:bg-white/10"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -112,17 +111,17 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-lg">
+        <div className="md:hidden border-t border-white/10 bg-black/70 backdrop-blur-xl">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "block px-3 py-2 rounded-lg text-base font-medium transition-colors",
+                  "block px-3 py-2 rounded-xl text-base font-medium transition-colors",
                   activeSection === link.href.slice(1)
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:bg-muted"
+                    ? "bg-white/[0.06] text-amber-200"
+                    : "text-white/70 hover:bg-white/[0.04]"
                 )}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -131,10 +130,10 @@ export function Navbar() {
             ))}
             <Button
               asChild
-              className="w-full gradient-sunset text-white border-0"
+              className="w-full rounded-xl border-0 bg-[linear-gradient(135deg,#ffb703_0%,#fb5607_55%,#ff006e_120%)] text-black"
             >
               <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                Get a Quote
+                Book Consultation
               </Link>
             </Button>
           </div>
