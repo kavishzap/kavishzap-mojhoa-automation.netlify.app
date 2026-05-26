@@ -24,7 +24,7 @@ import {
   ShoppingCart,
   Wand2,
 } from "lucide-react";
-import { HeroGlobe3D } from "@/components/hero-globe-3d";
+import { HeroGlobe3D, HeroGlobeScene } from "@/components/hero-globe-3d";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -190,26 +190,16 @@ function Hero() {
   const smoothY2 = useSpring(y2, { stiffness: 90, damping: 18, mass: 0.6 });
 
   return (
-    <section id="home" className="relative overflow-hidden max-lg:bg-[#07070a] pt-24 md:pt-28">
-      {/* Mobile: solid dark base over global background glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 bg-[#07070a] lg:hidden"
-      />
-
-      {/* Desktop: centered globe */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 hidden h-[min(70vw,680px)] w-[min(70vw,680px)] -translate-x-1/2 -translate-y-1/2 opacity-[0.26] lg:block">
-        <HeroGlobe3D />
-      </div>
+    <section id="home" className="relative isolate overflow-hidden bg-[#07070a] pt-24 md:pt-28">
+      <HeroGlobeScene className="z-0 hidden lg:block" />
 
       <div ref={ref} className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid min-h-[calc(100vh-7rem)] items-center gap-10 lg:grid-cols-12">
           {/* LEFT: keep clean for readability */}
           <div className="relative lg:col-span-6">
-            {/* Mobile: globe behind headline → stats */}
-            <div className="pointer-events-none absolute inset-x-0 top-24 z-0 h-[min(100vw,480px)] lg:hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(7,7,10,0.85)_0%,#07070a_70%)]" />
-              <div className="relative mx-auto h-full w-full max-w-[min(92vw,420px)] opacity-[0.12]">
+            {/* Mobile: globe behind headline → stats only */}
+            <div className="pointer-events-none absolute inset-x-0 top-24 z-0 h-[min(108vw,540px)] overflow-hidden lg:hidden">
+              <div className="pointer-events-auto mx-auto h-full w-full max-w-[min(94vw,460px)]">
                 <HeroGlobe3D />
               </div>
             </div>
