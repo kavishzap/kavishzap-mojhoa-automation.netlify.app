@@ -24,7 +24,7 @@ import {
   ShoppingCart,
   Wand2,
 } from "lucide-react";
-import { HeroGlobe3D, HeroGlobeScene } from "@/components/hero-globe-3d";
+import { HeroGlobeScene } from "@/components/hero-globe-3d";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -191,19 +191,12 @@ function Hero() {
 
   return (
     <section id="home" className="relative isolate overflow-hidden bg-[#07070a] pt-24 md:pt-28">
-      <HeroGlobeScene className="z-0 hidden lg:block" />
+      <HeroGlobeScene className="z-0" />
 
       <div ref={ref} className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid min-h-[calc(100vh-7rem)] items-center gap-10 lg:grid-cols-12">
           {/* LEFT: keep clean for readability */}
           <div className="relative lg:col-span-6">
-            {/* Mobile: globe behind headline → stats only */}
-            <div className="pointer-events-none absolute inset-x-0 top-24 z-0 h-[min(108vw,540px)] overflow-hidden lg:hidden">
-              <div className="pointer-events-auto mx-auto h-full w-full max-w-[min(94vw,460px)]">
-                <HeroGlobe3D />
-              </div>
-            </div>
-
             <div className="relative z-10">
             <Reveal>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/70">
