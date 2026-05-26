@@ -4,24 +4,16 @@ import Logo from "../assets/mojhoa_whiteMO.png";
 import Image from "next/image";
 const quickLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/solutions", label: "Solutions" },
   { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
-];
-
-const services = [
-  { href: "/solutions", label: "Custom ERP & Business Automation" },
-  { href: "/solutions", label: "Booking Systems & Platforms" },
-  { href: "/solutions", label: "POS Systems & Operations" },
-  { href: "/solutions", label: "Branding & Digital Presence" },
 ];
 
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black/60 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 text-center sm:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 text-center sm:text-left">
           {/* Brand */}
           <div className="flex flex-col items-center sm:items-start space-y-4">
             <Image
@@ -31,7 +23,7 @@ export function Footer() {
               priority
             />
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Premium AI automation and enterprise-grade software systems that help modern businesses scale.
+              We build custom AI solutions, automation workflows, and modern digital systems that help businesses scale efficiently and stay ahead of the competition.
             </p>
           </div>
 
@@ -48,25 +40,6 @@ export function Footer() {
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-heading font-semibold mb-4 text-center sm:text-left">
-              Services
-            </h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.label}>
-                  <Link
-                    href={service.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {service.label}
                   </Link>
                 </li>
               ))}
@@ -122,11 +95,8 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10 space-y-1 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Mojhoa Automations. All rights
+            © {new Date().getFullYear()} Mojhoa Automations LTD. All rights
             reserved.
-          </p>
-          <p className="text-sm text-muted-foreground">
-           BRN: C25227605
           </p>
         </div>
       </div>
